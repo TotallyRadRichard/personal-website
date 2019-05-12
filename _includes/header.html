@@ -17,12 +17,46 @@
 {% endif %}
 
 <!doctype html>
-<html class="height-full">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="description" content="{{ meta_description }}" />
     <title>{{ user.name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="{{ "/assets/styles.css" | relative_url }}" rel="stylesheet" type="text/css">
+    <link href="/assets/capicon.css" rel="stylesheet" type="text/css">
   </head>
-  <body class="bg-white height-full" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
+  <body>
+    <div id="container">
+      <header>
+        <h1 id="siteTitle">
+          <a href="/">
+            <span class="victory">Totally Rad</span>
+            <span class="vectro">Richard</span>
+          </a>
+        </h1>
+        <nav class="clearfix">
+          <div class="float-left"></div>
+          <div class="float-right">
+            {% if site.social_media %}
+              <div class="d-flex flex-wrap flex-items-start {% if site.layout == 'stacked' %}flex-justify-center mt-1 mt-md-3{% endif %}">
+                {% for account in site.social_media %}
+                  <div class="mr-3 mb-3">
+                    {% assign service_shortname = account[0] %}
+                    {% assign service = site.data.social_media[service_shortname] %}
+                    <a 
+                      id="link{{ service.name }}"
+                      href="{{ service.profile_url_prefix }}{{ account[1] }}" 
+                      title="{{ service.name }}: {{ account[1] }}" 
+                      aria-label="{{ service.name }}: {{ account[1] }}"
+                      target="_blank"
+                    >
+                        <i class="icon-{{ service.icon_id }}"></i>
+                    </a>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </nav>
+      </header>

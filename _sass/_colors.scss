@@ -1,0 +1,41 @@
+/*
+ * Color organization technique borrowed from:
+ * https://www.oomphinc.com/notes/2015/12/easy-color-organization-with-sass/
+ */
+
+$colors: (
+  mono: (
+    black: #000,
+    dark: #333,
+    base: #666,
+    light: #888,
+    white: #ddd
+  ),
+  neon: (
+    pink: #e23792,
+    green: #5feb50,
+    yellow: #fffd85,
+    teal: #18c4c4,
+    purple: #aa63da
+  ),
+  brand: (
+    github: #fafafa,
+    twitter: #1da1f2,
+    youtube: #ff0000,
+    linkedin: #0077b5
+  )
+);
+
+/*
+* Better function for color palettes using Sass maps
+* Link: http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+* Usage: color: palette(brand,tan);
+*/
+@function color($palette, $tone: 'base') {
+  @return map-get( map-get($colors, $palette), $tone );
+}
+
+@mixin color-glow($palette, $tone, $size: 5px) {
+  color: color($palette, $tone);
+  filter: drop-shadow(0px 0px $size color($palette, $tone));
+}

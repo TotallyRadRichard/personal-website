@@ -1,6 +1,6 @@
 ---
 title: "Welcome to Jekyll!"
-icon: briefcase
+icon: package
 ---
 
 **Hello world**, this is my first Jekyll blog post.

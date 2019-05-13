@@ -1,6 +1,12 @@
 .highlight  { 
   width: 100%;
   overflow: auto;
+
+  code {
+    display: inline-block;
+    padding-left: 5px;
+    font-size: 14px;
+  }
 }
 .highlight .err { color: color(neon, pink); background-color: #e3d2d2 } /* Error */
 .highlight .nt,  /* Name.Tag */

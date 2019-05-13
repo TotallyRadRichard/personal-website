@@ -28,15 +28,13 @@ body::before {
   height: 100%;
   z-index: 0;
   opacity: 0.05;
-  background-image: url('../assets/img/city_bg.jpg');
-  background-repeat: no-repeat;
-  background-position: 50% 0;
+  background: url('../assets/img/80s_bg.jpg') no-repeat center bottom;
   -ms-background-size: cover;
   -o-background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  filter: grayscale(50%);
+  filter: grayscale(70%);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -165,9 +163,12 @@ footer {
 
 .articles-list {
   article {
-    height: 100px;
-    margin: 20px 0;
+    margin: 30px 0;
     clear: both;
+
+    p {
+      padding-left: 120px;
+    }
 
     .post-icon {
       float: left;
@@ -177,6 +178,7 @@ footer {
       margin-right: 20px;
       text-align: center;
       font-size: 80px;
+      filter: drop-shadow(0px 0px 12px color(mono, light));
     }
   }
 }

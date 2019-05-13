@@ -1,0 +1,16 @@
+<article>
+    <span class="post-icon">
+      <i class="icon-{{ post.icon | default:'362' }}"></i>
+    </span>
+    <h3>
+      <a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title }}</a>
+    </h3>
+    <span class="post-date"></span>
+    {% if post.pinned %}
+      Pinned Post
+    {% else %}
+      Published {{ post.date | date: "%b %d, %Y" }}
+    {% endif %}
+    </span>
+    <p>{{ post.excerpt }}</p>
+  </article>

@@ -8,7 +8,7 @@ $colors: (
     black: #000,
     dark: #333,
     base: #666,
-    light: #888,
+    light: #aaa,
     white: #ddd
   ),
   neon: (
@@ -35,7 +35,7 @@ $colors: (
   @return map-get( map-get($colors, $palette), $tone );
 }
 
-@mixin color-glow($palette, $tone, $size: 5px) {
+@mixin color-glow($palette, $tone, $size: 0.5em) {
   color: color($palette, $tone);
   filter: drop-shadow(0px 0px $size color($palette, $tone));
 }
